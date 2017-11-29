@@ -13,9 +13,14 @@ import java.util.List;
 public class TalentPoolServerImpl implements ITalentPoolServer{
     @Resource
     private ITalentPoolServer iTalentPoolServer;
-
     @Override
     public List<TalentPool> findTalentPool() {
         return iTalentPoolServer.findTalentPool();
     }
+
+    @Override
+    public TalentPool getTalentPoolById(String id) {
+        return null;
+    }
+
 }
