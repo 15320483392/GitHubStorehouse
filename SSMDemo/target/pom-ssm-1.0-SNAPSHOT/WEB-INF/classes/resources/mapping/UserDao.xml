@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.wt.ssmTest.dao.IUserDao">
+    <select id="getUserById" resultType="com.wt.ssmTest.entity.User" parameterType="int">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="longin" resultType="com.wt.ssmTest.entity.User" parameterType="String">
+        SELECT * FROM user WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <select id="findUser" resultType="com.wt.ssmTest.entity.User">
+        SELECT * FROM user
+    </select>
+</mapper>
