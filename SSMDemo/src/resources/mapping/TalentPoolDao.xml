@@ -6,4 +6,8 @@
     <select id="findTalentPool" resultType="com.wt.talentpool.entity.TalentPool">
         SELECT * FROM talent_pool
     </select>
+
+    <select id="getTalentPoolById" resultType="com.wt.talentpool.entity.TalentPool" parameterType="int">
+        SELECT * FROM talent_pool WHERE id= #{id}
+    </select>
 </mapper>

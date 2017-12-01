@@ -1,9 +1,10 @@
 package com.wt.talentpool.server;
 
+import com.wt.talentpool.dao.ITalentPoolDao;
 import com.wt.talentpool.entity.TalentPool;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -11,16 +12,18 @@ import java.util.List;
  */
 @Service("talentPoolServerImpl")
 public class TalentPoolServerImpl implements ITalentPoolServer{
-    @Resource
-    private ITalentPoolServer iTalentPoolServer;
+
+    @Autowired
+    private ITalentPoolDao iTalentPoolDao;
+
     @Override
     public List<TalentPool> findTalentPool() {
-        return iTalentPoolServer.findTalentPool();
+        return iTalentPoolDao.findTalentPool();
     }
 
     @Override
     public TalentPool getTalentPoolById(String id) {
-        return null;
+        return iTalentPoolDao.getTalentPoolById(Integer.parseInt(id));
     }
 
 }

@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/11/28.
  */
+
 public interface ITalentPoolServer {
     /**
      * 获取全部人员信息
